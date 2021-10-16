@@ -21,7 +21,7 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clon
 
 
 def stats(update, context):
-    WaktuBotDijalankan = get_readable_time(time.time() - Sejauhini)
+    currentTime = get_readable_time(time.time() - botStartTime)
     Total, Digunakan, Bebas = shutil.disk_usage('.')
     Total = get_readable_file_size(total)
     Digunakan = get_readable_file_size(used)
