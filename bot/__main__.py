@@ -21,25 +21,25 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clon
 
 
 def stats(update, context):
-    currentTime = get_readable_time(time.time() - botStartTime)
-    total, used, free = shutil.disk_usage('.')
-    total = get_readable_file_size(total)
-    used = get_readable_file_size(used)
-    free = get_readable_file_size(free)
-    sent = get_readable_file_size(psutil.net_io_counters().bytes_sent)
-    recv = get_readable_file_size(psutil.net_io_counters().bytes_recv)
-    cpuUsage = psutil.cpu_percent(interval=0.5)
-    memory = psutil.virtual_memory().percent
-    disk = psutil.disk_usage('/').percent
-    stats = f'<b>Bot Uptime:</b> <code>{currentTime}</code>\n' \
-            f'<b>Total Disk Space:</b> <code>{total}</code>\n' \
-            f'<b>Used:</b> <code>{used}</code> ' \
-            f'<b>Free:</b> <code>{free}</code>\n\n' \
-            f'<b>Upload:</b> <code>{sent}</code>\n' \
-            f'<b>Download:</b> <code>{recv}</code>\n\n' \
-            f'<b>CPU:</b> <code>{cpuUsage}%</code> ' \
-            f'<b>RAM:</b> <code>{memory}%</code> ' \
-            f'<b>DISK:</b> <code>{disk}%</code>'
+    Bot telah dijalankan selama ⏰ = get_readable_time(time.time() - Sejauh ini)
+    Total, Digunakan, Bebas = shutil.disk_usage('.')
+    Total ✅ = get_readable_file_size(total)
+    Digunakan ⚠️ = get_readable_file_size(used)
+    Bebas ♻️ = get_readable_file_size(free)
+    Dikirim = get_readable_file_size(psutil.net_io_counters().bytes_sent)
+    Diterima = get_readable_file_size(psutil.net_io_counters().bytes_recv)
+    PemakaianCPU 🔥 = psutil.cpu_percent(interval=0.5)
+    Memori 💬 = psutil.virtual_memory().percent
+    Penyimpanan ⚠️ = psutil.disk_usage('/').percent
+    stats = f'<b>Bot telah dijalankan selama ⏰:</b> <code>{currentTime}</code>\n' \
+            f'<b>Total Penyimpanan ✅:</b> <code>{total}</code>\n' \
+            f'<b>Digunakan ⚠️:</b> <code>{used}</code> ' \
+            f'<b>Bebas ♻️:</b> <code>{free}</code>\n\n' \
+            f'<b>Upload 📤:</b> <code>{sent}</code>\n' \
+            f'<b>Download 📥:</b> <code>{recv}</code>\n\n' \
+            f'<b>PemakaianCPU 🔥:</b> <code>{cpuUsage}%</code> ' \
+            f'<b>Memori 💬:</b> <code>{memory}%</code> ' \
+            f'<b>Penyimpanan ⚠️:</b> <code>{disk}%</code>'
     sendMessage(stats, context.bot, update)
 
 
@@ -51,7 +51,7 @@ def start(update, context):
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 Bot ini ajaib, diturunkan dari planet antahberantah dan diberikan untuk ryan ganteng :v
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Ketik /{BotCommands.HelpCommand} Untuk Mendapatkan Perintah 🦋
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
@@ -87,23 +87,25 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
+
+Pesan : yang ga di translate artinya ga penting :D
 <b>/{BotCommands.HelpCommand}</b>: To get this message
 <br><br>
-<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
+<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Untuk memulai mirror ke google drive 🦋.
 <br><br>
-<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Untuk memulai mirror ke google drive namun dengan format tar 🦋
 <br><br>
-<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.zip) version of the download
+<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Untuk memulai mirror ke google drive namun dengan format zip🦋
 <br><br>
-<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Untuk memulai mirror ke google drive dan mengekstraknya 🦋
 <br><br>
-<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
+<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Untuk memulai mirror menggunakan qBittorrent 🦋, Pakai <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum download
 <br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.tar) version of the download
+<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Untuk memulai mirror menggunakan qBittorrent namun dengan format tar 🦋
 <br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.zip) version of the download
+<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Untuk memulai mirror menggunakan qBittorrent namun dengan format zip 🦋
 <br><br>
-<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Untuk memulai mirror menggunakan qBittorrent dan mengekstraknya 🦋
 <br><br>
 <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
 <br><br>
@@ -121,17 +123,17 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and if downloaded file is any archive, extracts it to Telegram
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Menyalin Folder dengan menggunakan jurus kagebunshin no jutsu 🦋
 <br><br>
-<b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
+<b>/{BotCommands.CountCommand}</b> [drive_url]: Menghitung File dalam Folder di Google Drive
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file pada google drive ( Hanya Admin Dan Owner )
 <br><br>
-<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl. Click <b>/{BotCommands.WatchCommand}</b> for more help
+<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror video youtube kamu 🦋 Klik <b>/{BotCommands.WatchCommand}</b> untuk pertolongan selanjutnya
 <br><br>
-<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror video youtube kamu namun dengan format tar 🦋
 <br><br>
-<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl and zip before uploading
+<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror video youtube kamu namun dengan format zip 🦋
 <br><br>
 <b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl 
 <br><br>
@@ -141,43 +143,43 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.LeechSetCommand}</b>: Leech Settings 
 <br><br>
-<b>/{BotCommands.SetThumbCommand}</b>: Reply photo to set it as Thumbnail
+<b>/{BotCommands.SetThumbCommand}</b>: Reply/Tag foto untuk dijadikan thumbnail ( hanya owner )
 <br><br>
-<b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
+<b>/{BotCommands.CancelMirror}</b>: Reply/Tag ke pesan mirror yang ingin dibatalkan 🦋
 <br><br>
-<b>/{BotCommands.CancelAllCommand}</b>: Cancel all running tasks
+<b>/{BotCommands.CancelAllCommand}</b>: Batal semua tugas yang dijalankan ( hanya owner )
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Searches the search term in the Google Drive, If found replies with the link
+<b>/{BotCommands.ListCommand}</b> [search term]: Mencari file/folder yang sudah di mirror didalam google drive 🦋
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
+<b>/{BotCommands.StatusCommand}</b>: Memperlihatkan semua tugas mirror yang ada :D
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
+<b>/{BotCommands.StatsCommand}</b>: Untuk melihat status bot 🦋
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Slam Mirrorbot Help',
-        author_name='Slam Mirrorbot',
-        author_url='https://github.com/SlamDevs/slam-mirrorbot',
+        title='MirrorX Help ⚡️',
+        author_name='Ryan wibu pro tzi',
+        author_url='t.me/@ur_fatherr',
         html_content=help_string_telegraph,
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
+/{BotCommands.PingCommand}: Mengecek ping bot 🦋
 
 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 
 /{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
+/{BotCommands.AuthorizedUsersCommand}: List Admin ( hanya owner )
 
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
+/{BotCommands.AddSudoCommand}: Menambahkan admin ( hanya owner )
 
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
+/{BotCommands.RmSudoCommand}: Menghapus admin ( hanya owner )
 
-/{BotCommands.RestartCommand}: Restart the bot
+/{BotCommands.RestartCommand}: Merestart bot ( gunakan jika ada kesalahan fatal )
 
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+/{BotCommands.LogCommand}: Mendapatkan log bot 🦋
 
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.SpeedCommand}: Mengecek kekuatan internet stable atau tidak 🦋
 
 /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
 
