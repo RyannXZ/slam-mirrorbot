@@ -18,7 +18,7 @@ VIDEO_SUFFIXES = ("M4V", "MP4", "MOV", "FLV", "WMV", "3GP", "MPG", "WEBM", "MKV"
 
 def clean_download(path: str):
     if os.path.exists(path):
-        LOGGER.info(f"Cleaning Download: {path}")
+        LOGGER.info(f"Membersihkan Unduhan: {path}")
         shutil.rmtree(path)
 
 def start_cleanup():
@@ -38,11 +38,11 @@ def clean_all():
 
 def exit_clean_up(signal, frame):
     try:
-        LOGGER.info("Please wait, while we clean up the downloads and stop running downloads")
+        LOGGER.info("Sabar Tod 😠, lgi bersihin unduhan dan membtalkan unduhan")
         clean_all()
         sys.exit(0)
     except KeyboardInterrupt:
-        LOGGER.warning("Force Exiting before the cleanup finishes!")
+        LOGGER.warning("Paksa Keluar Dan Membersihkan Selesai !")
         sys.exit(1)
 
 def get_path_size(path):
