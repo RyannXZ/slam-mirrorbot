@@ -22,15 +22,15 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clon
 
 def stats(update, context):
     currentTime = get_readable_time(time.time() - botStartTime)
-    Total, Digunakan, Bebas = shutil.disk_usage('.')
-    Total = get_readable_file_size(total)
-    Digunakan = get_readable_file_size(used)
-    Bebas = get_readable_file_size(free)
-    Dikirim = get_readable_file_size(psutil.net_io_counters().bytes_sent)
-    Diterima = get_readable_file_size(psutil.net_io_counters().bytes_recv)
-    PemakaianCPU = psutil.cpu_percent(interval=0.5)
-    Memori = psutil.virtual_memory().percent
-    Penyimpanan = psutil.disk_usage('/').percent
+    total, used, free = shutil.disk_usage('.')
+    total = get_readable_file_size(total)
+    used = get_readable_file_size(used)
+    free = get_readable_file_size(free)
+    sent = get_readable_file_size(psutil.net_io_counters().bytes_sent)
+    recv = get_readable_file_size(psutil.net_io_counters().bytes_recv)
+    cpuUsage = psutil.cpu_percent(interval=0.5)
+    memory = psutil.virtual_memory().percent
+    disk = psutil.disk_usage('/').percent
     stats = f'<b>Bot telah dijalankan selama ⏰:</b> <code>{currentTime}</code>\n' \
             f'<b>Total Penyimpanan ✅:</b> <code>{total}</code>\n' \
             f'<b>Digunakan ⚠️:</b> <code>{used}</code> ' \
