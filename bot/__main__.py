@@ -21,16 +21,16 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clon
 
 
 def stats(update, context):
-    WaktuBotDijalankan⏰ = get_readable_time(time.time() - Sejauhini)
+    WaktuBotDijalankan = get_readable_time(time.time() - Sejauhini)
     Total, Digunakan, Bebas = shutil.disk_usage('.')
-    Total ✅ = get_readable_file_size(total)
-    Digunakan ⚠️ = get_readable_file_size(used)
-    Bebas ♻️ = get_readable_file_size(free)
+    Total = get_readable_file_size(total)
+    Digunakan = get_readable_file_size(used)
+    Bebas = get_readable_file_size(free)
     Dikirim = get_readable_file_size(psutil.net_io_counters().bytes_sent)
     Diterima = get_readable_file_size(psutil.net_io_counters().bytes_recv)
-    PemakaianCPU 🔥 = psutil.cpu_percent(interval=0.5)
-    Memori 💬 = psutil.virtual_memory().percent
-    Penyimpanan ⚠️ = psutil.disk_usage('/').percent
+    PemakaianCPU = psutil.cpu_percent(interval=0.5)
+    Memori = psutil.virtual_memory().percent
+    Penyimpanan = psutil.disk_usage('/').percent
     stats = f'<b>Bot telah dijalankan selama ⏰:</b> <code>{currentTime}</code>\n' \
             f'<b>Total Penyimpanan ✅:</b> <code>{total}</code>\n' \
             f'<b>Digunakan ⚠️:</b> <code>{used}</code> ' \
