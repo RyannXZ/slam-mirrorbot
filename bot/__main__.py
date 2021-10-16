@@ -158,7 +158,7 @@ Pesan : yang ga di translate artinya ga penting :D
 help = Telegraph(access_token=telegraph_token).create_page(
         title='MirrorX Help ⚡️',
         author_name='Ryan wibu pro tzi',
-        author_url='t.me/@ur_fatherr',
+        author_url='https://github.com/SlamDevs/slam-mirrorbot',
         html_content=help_string_telegraph,
     )["path"]
 
