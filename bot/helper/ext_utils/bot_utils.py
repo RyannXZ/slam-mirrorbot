@@ -21,14 +21,14 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading...📤"
-    STATUS_DOWNLOADING = "Downloading...📥"
-    STATUS_CLONING = "Cloning...♻️"
-    STATUS_WAITING = "Queued...📝"
-    STATUS_FAILED = "Failed 🚫. Cleaning Download..."
-    STATUS_PAUSE = "Paused...⭕️"
-    STATUS_ARCHIVING = "Archiving...🔐"
-    STATUS_EXTRACTING = "Extracting...📂"
+    STATUS_UPLOADING = "Sabar Beb Lagi Upload...💘"
+    STATUS_DOWNLOADING = "Mendownload...⚡️"
+    STATUS_CLONING = "Kagebunshin No Jutsu...♻️"
+    STATUS_WAITING = "Antri Bos...📝"
+    STATUS_FAILED = "Gagal ❌. Cleaning Download..."
+    STATUS_PAUSE = "Dijeda...🛑"
+    STATUS_ARCHIVING = "Mengarsipkan...🔐"
+    STATUS_EXTRACTING = "Sedang Ekstrak...📂"
     STATUS_SPLITTING = "Splitting...✂️"
 
 
